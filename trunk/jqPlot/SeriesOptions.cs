@@ -12,7 +12,7 @@ namespace jqPlot
             rendererOptions = new RendererOptions();
         }
 
-        public string renderer
+        public object renderer
         {
             get;
             set;
