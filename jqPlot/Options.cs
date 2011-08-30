@@ -7,13 +7,15 @@ namespace jqPlot
 {
     public class Options
     {
+        private List<SeriesOptions> _seriesOptions;
+
         public Options()
         {
             legend = new Legend();
-            series = new List<SeriesOptions>();
-            axes = new List<AxesOptions>();
+            //series = new List<SeriesOptions>();
+            axes = new NoAxesOptions();
             grid = new GridOptions();
-            seriesColors = new List<string>();
+            _seriesOptions = new List<SeriesOptions>();
         }
 
         public bool stackSeries
@@ -34,13 +36,13 @@ namespace jqPlot
             set;
         }
 
-        public List<SeriesOptions> series
-        {
-            get;
-            set;
-        }
+//        public List<SeriesOptions> series
+//        {
+//            get;
+//            set;
+//        }
 
-        public List<AxesOptions> axes
+        public IAxesDefinition axes
         {
             get;
             set;
@@ -52,16 +54,31 @@ namespace jqPlot
             set;
         }
 
-        public List<string> seriesColors
+        
+        public bool drawIfHidden
         {
             get;
             set;
         }
 
-        public bool drawIfHidden
+        public SeriesOptions[] series
         {
-            get;
-            set;
+            get
+            {
+                if (_seriesOptions == null)
+                {
+                    return null;
+                }
+                return _seriesOptions.ToArray();
+            }
+        }
+
+        public void AddSeriesOptions(SeriesOptions seriesOptions)
+        {
+            if (_seriesOptions == null)
+                _seriesOptions = new List<SeriesOptions>();
+
+            _seriesOptions.Add(seriesOptions);
         }
     }
 }
