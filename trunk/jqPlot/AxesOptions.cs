@@ -60,5 +60,46 @@ namespace jqPlot
         {
             get { return _ticks.ToArray(); }
         }
+
+        private string _min;
+        public string min
+        {
+            get { return _min; }
+            set { _min = value; }
+        }
+
+        private string _max;
+        private string _tickRenderer = TickRenderers.AxisTickRenderer;
+        private TickOptions _tickOptions;
+
+        public string max
+        {
+            get { return _max; }
+            set { _max = value; }
+        }
+
+        public string tickRenderer
+        {
+            get {
+                return _tickRenderer;
+            }
+            set {
+                _tickRenderer = value;
+            }
+        }
+
+        public TickOptions tickOptions
+        {
+            get {
+                if (_tickOptions==null)
+                {
+                    _tickOptions = new TickOptions();
+                }
+                return _tickOptions;
+            }
+            set {
+                _tickOptions = value;
+            }
+        }
     }
 }

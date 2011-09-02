@@ -36,16 +36,20 @@ namespace jqPlot
             set;
         }
 
-//        public List<SeriesOptions> series
-//        {
-//            get;
-//            set;
-//        }
-
+        private IAxesDefinition _axes;
+        /// <summary>
+        /// Allows you specify the behaviour of the axes. Defaults to X and Y definition. In order to specify
+        /// only one you should set this be a new OnlyXAxisDefinition() or OnlyYAxisDefintion()
+        /// </summary>
         public IAxesDefinition axes
         {
-            get;
-            set;
+            get
+            {
+                if (_axes is NoAxesOptions)
+                    _axes = new XAndYAxesDefinition();
+                return _axes;
+            }
+            set { _axes = value; }
         }
 
         public GridOptions grid
