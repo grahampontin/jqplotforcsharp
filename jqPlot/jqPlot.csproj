@@ -84,6 +84,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RendererOptions.cs" />
     <Compile Include="DataRenderers.cs" />
+    <Compile Include="TickOptions.cs" />
+    <Compile Include="TickRenderers.cs" />
     <Compile Include="XYSeriesData.cs" />
     <Compile Include="SeriesOptions.cs" />
     <Compile Include="Tick.cs" />

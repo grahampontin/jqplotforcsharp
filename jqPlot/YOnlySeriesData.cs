@@ -25,6 +25,8 @@ namespace jqPlot
 
         public void AddPoints(List<double> points)
         {
+            if (_points == null)
+                _points = new List<double>();
             _points.AddRange(points);
         }
 
