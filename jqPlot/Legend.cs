@@ -7,6 +7,8 @@ namespace jqPlot
 {
     public class Legend
     {
+        private string _placement;
+
         public bool show
         {
             get;
@@ -17,6 +19,16 @@ namespace jqPlot
         {
             get;
             set;
+        }
+
+        public string placement
+        {
+            get {
+                return _placement;
+            }
+            set {
+                _placement = value;
+            }
         }
     }
 }

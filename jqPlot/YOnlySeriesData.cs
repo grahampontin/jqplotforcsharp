@@ -10,6 +10,15 @@ namespace jqPlot
         private List<double> _points;
         private JavaScriptSerializer _javaScriptSerializer = new JavaScriptSerializer();
 
+        public YOnlySeriesData(IEnumerable<double> counts)
+        {
+            this.AddPoints(counts);
+        }
+
+        public YOnlySeriesData()
+        {   
+        }
+
         public double[] Points
         {
             get { return _points.ToArray(); }
@@ -23,7 +32,7 @@ namespace jqPlot
             _points.Add(y);
         }
 
-        public void AddPoints(List<double> points)
+        public void AddPoints(IEnumerable<double> points)
         {
             if (_points == null)
                 _points = new List<double>();
