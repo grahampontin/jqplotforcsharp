@@ -7,6 +7,8 @@ namespace jqPlot
 {
     public class SeriesOptions
     {
+        private bool _showMarker = true;
+
         public SeriesOptions()
         {
             rendererOptions = new RendererOptions();
@@ -30,7 +32,14 @@ namespace jqPlot
             set;
         }
 
-
-
+        public bool showMarker
+        {
+            get {
+                return _showMarker;
+            }
+            set {
+                _showMarker = value;
+            }
+        }
     }
 }

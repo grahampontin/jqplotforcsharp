@@ -31,6 +31,13 @@ namespace jqPlot
             set { _label = value; }
         }
 
+        private string _labelRenderer = "$.jqplot.CanvasAxisLabelRenderer";
+        public string labelRenderer
+        {
+            get { return _labelRenderer; }
+            set { _labelRenderer = value; }
+        }
+
         private string _renderer = AxisRenderers.LinearAxisRenderer;
         public string renderer
         {
@@ -71,6 +78,7 @@ namespace jqPlot
         private string _max;
         private string _tickRenderer = TickRenderers.AxisTickRenderer;
         private TickOptions _tickOptions;
+        public int angle;
 
         public string max
         {

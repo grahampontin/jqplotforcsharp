@@ -84,5 +84,26 @@ namespace jqPlot
 
             _seriesOptions.Add(seriesOptions);
         }
+
+        /// <summary>
+        /// CReate some default settings based on your series type
+        /// </summary>
+        /// <param name="ofType"></param>
+        public void AddSeriesOptions(SeriesTypes ofType)
+        {
+            SeriesOptions options = new SeriesOptions();
+            switch (ofType)
+            {
+                case SeriesTypes.Bar:
+                    options.renderer = DataRenderers.BarRenderer;
+                    break;
+                case SeriesTypes.Line:
+                    options.renderer = DataRenderers.LineRenderer;
+                    break;
+                default:
+                    throw new NotImplementedException("Don't know how to make a chart of type " +  ofType);
+            }
+            AddSeriesOptions(options);
+        }
     }
 }
