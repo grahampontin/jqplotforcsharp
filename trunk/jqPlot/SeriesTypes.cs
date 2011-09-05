@@ -7,6 +7,7 @@ namespace jqPlot
 {
     public enum SeriesTypes
     {
-        Bar, Line
+        Bar, Line,
+        Pie
     }
 }

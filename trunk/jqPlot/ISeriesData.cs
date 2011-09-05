@@ -1,4 +1,6 @@
-﻿namespace jqPlot
+﻿using System;
+
+namespace jqPlot
 {
     public interface ISeriesData
     {

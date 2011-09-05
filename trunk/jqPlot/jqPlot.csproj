@@ -84,6 +84,7 @@
     <Compile Include="OnlyXAxisDefinition.cs" />
     <Compile Include="OnlyYAxisDefinition.cs" />
     <Compile Include="Options.cs" />
+    <Compile Include="PieSeriesData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RendererOptions.cs" />
     <Compile Include="DataRenderers.cs" />
