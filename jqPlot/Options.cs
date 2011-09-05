@@ -14,7 +14,7 @@ namespace jqPlot
             legend = new Legend();
             //series = new List<SeriesOptions>();
             axes = new NoAxesOptions();
-            grid = new GridOptions();
+            //grid = new GridOptions(); Fucks up Pies
             _seriesOptions = new List<SeriesOptions>();
         }
 
@@ -52,13 +52,6 @@ namespace jqPlot
             set { _axes = value; }
         }
 
-        public GridOptions grid
-        {
-            get;
-            set;
-        }
-
-        
         public bool drawIfHidden
         {
             get;
@@ -89,7 +82,7 @@ namespace jqPlot
         /// CReate some default settings based on your series type
         /// </summary>
         /// <param name="ofType"></param>
-        public void AddSeriesOptions(SeriesTypes ofType)
+        public SeriesOptions AddSeriesOptions(SeriesTypes ofType)
         {
             SeriesOptions options = new SeriesOptions();
             switch (ofType)
@@ -100,10 +93,22 @@ namespace jqPlot
                 case SeriesTypes.Line:
                     options.renderer = DataRenderers.LineRenderer;
                     break;
+                case SeriesTypes.Pie:
+                    options.renderer = DataRenderers.PieRenderer;
+                    options.rendererOptions.showDataLabels = true;
+                    break;
                 default:
                     throw new NotImplementedException("Don't know how to make a chart of type " +  ofType);
             }
             AddSeriesOptions(options);
+            return options;
+        }
+
+        public SeriesOptions AddSeriesOptions(SeriesTypes ofType, string withLabel)
+        {
+            SeriesOptions options = AddSeriesOptions(ofType);
+            options.label = withLabel;
+            return options;
         }
     }
 }
