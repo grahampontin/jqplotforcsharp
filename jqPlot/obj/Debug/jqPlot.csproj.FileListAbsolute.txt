@@ -1,0 +1,4 @@
+C:\Users\Graham\Documents\GitHub\jqplotforcsharp\jqPlot\bin\Debug\jqPlot.dll
+C:\Users\Graham\Documents\GitHub\jqplotforcsharp\jqPlot\bin\Debug\jqPlot.pdb
+C:\Users\Graham\Documents\GitHub\jqplotforcsharp\jqPlot\obj\Debug\jqPlot.dll
+C:\Users\Graham\Documents\GitHub\jqplotforcsharp\jqPlot\obj\Debug\jqPlot.pdb

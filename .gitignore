@@ -1,0 +1,4 @@
+*.dll
+jqPlot/bin/Debug/jqPlot.pdb
+*.pdb
+jqPlot/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
